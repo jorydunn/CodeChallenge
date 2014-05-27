@@ -1,4 +1,4 @@
-public Class ProblemOne {
+public class ProblemOne {
 
 	public static int sumIntValuesInString(String str) {
 		int sum = 0;
@@ -11,15 +11,17 @@ public Class ProblemOne {
 		return sum;
 	}
 	
-	public static void assertEquals(int actual, int expected) {
+	public static void displayAndAssertSum(String input, int expected) {
+		int actual = ProblemOne.sumIntValuesInString(input);
 		if (actual != expected) {
 			throw new AssertionError("Expected: " + expected + " Actual: " + actual);
 		}
+		System.out.println("Input: " + input + " Sum: " + actual);
 	}
 	
 	public static void main(String[] args) {
-		assertEquals(ProblemOne.sumIntValuesInString("dywi23jssi88sjdhj1"), 22);
-		assertEquals(ProblemOne.sumIntValuesInString("dywi23js0si88sjdhj1"), 22);
-		assertEquals(ProblemOne.sumIntValuesInString("dywi123j0000s9si88sjdhj1"), 32);
+		ProblemOne.displayAndAssertSum("dywi23jssi88sjdhj1", 22);
+		ProblemOne.displayAndAssertSum("dywi23js0si88sjdhj1", 22);
+		ProblemOne.displayAndAssertSum("dywi123j0000s9si88sjdhj1", 32);
 	}
 }
